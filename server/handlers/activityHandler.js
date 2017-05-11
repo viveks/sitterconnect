@@ -1,7 +1,6 @@
 var {activity} = require('../models/activity');
 
 var logActivity = (req,res) => {
-  console.log('In logActivity')
   var newActivity = new activity({
     whatActivity: req.body.whatActivity,
     loggedBy: req.body.loggedBy,
