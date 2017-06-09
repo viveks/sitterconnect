@@ -1,25 +1,13 @@
 var mongoose = require('mongoose');
 
-var activity = mongoose.model('activity',{
-  whatActivity: {type: String, required: true},
+var Activity = mongoose.model('Activity',{
+  activityType: {type: String, required: true},
+  subjectUser: {type: String, required: true},
+  headerText: {type: String, required: true},
+  loggedAt: {type: Date},
   loggedBy: {type: String, required: true },
-  loggedAt: {type: Date}
-  // whoAll: {type: [String]},
-  // where: {type: String},
-  // when: {type: Date, required: true},
-  // startTime: {type: Date, required: true},
-  // endTime: {type: Date, required: true}, // start=end
-  // activityType: {type: String, required: true},
-  // byWhom: {type: String, required: true },
-  // loggedAt: {type: Date},
+  activityTime: {type: String, required: true},
+  activityDetails: {type: String, required: true}
 });
 
-// var activityDetail = mongoose.model('activityDetail'), {
-//   whichActivity: {type: Objectid},
-//   detailLevel: {type: Number, required: true},
-//   detail: {type: String},
-//   detailOrder: {type: String}, //handy for multiple same level detail
-//   detailOperator: {type: String} //handy for multiple same level detail
-// }
-
-module.exports = {activity};
+module.exports = {Activity};

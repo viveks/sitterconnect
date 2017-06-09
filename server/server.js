@@ -2,7 +2,7 @@ var express = require('express');
 var bodyParser = require ('body-parser');
 
 var db = require('./db/db.js');
-var {logActivity} = require('./handlers/activityHandler');
+var {logActivity, getActivities} = require('./handlers/activityHandler');
 
 var app = new express();
 
@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 app.post('/logActivity',logActivity);
 
 //getActivityFeed
-//app.get('/getActivityFeed')
+app.get('/getActivities', getActivities);
 
 app.listen(3000,() => {
   console.log('started on port 3000');
